@@ -1,0 +1,62 @@
+!DOCTYPE html
+html lang=fa
+head
+meta charset=UTF-8
+titleتماشای آنلاین فیلم و سریال  VODtitle
+meta name=viewport content=width=device-width, initial-scale=1.0
+style
+body{margin0;font-familyTahoma,sans-serif;background#0f172a;color#fff}
+header{background#020617;padding18px;text-aligncenter;font-size22px}
+nav{displayflex;flex-wrapwrap;justify-contentcenter;gap10px;background#020617;padding10px}
+nav button{background#1e293b;color#fff;bordernone;padding8px 14px;cursorpointer;border-radius6px}
+nav buttonhover{background#334155}
+.movies{displaygrid;grid-template-columnsrepeat(auto-fit,minmax(260px,1fr));gap20px;padding20px}
+.movie{background#020617;padding10px;border-radius10px}
+.movie h3{font-size15px;margin8px 0}
+video{width100%;border-radius8px}
+footer{text-aligncenter;padding15px;color#94a3b8;font-size13px}
+style
+head
+body
+
+header🎬 پلتفرم تماشای آنلاین فیلم — رایگانheader
+
+nav
+button onclick=show('all')همهbutton
+button onclick=show('action')اکشنbutton
+button onclick=show('kids')کودکbutton
+button onclick=show('doc')مستندbutton
+button onclick=show('sci')علمی‌تخیلیbutton
+nav
+
+div class=movies id=moviesdiv
+
+footer
+نسخه اولیه — آماده لاگین، اشتراک و پنل مدیریت
+footer
+
+script
+const movies=[
+{tBig Buck Bunny,ckids,uhttpscommondatastorage.googleapis.comgtv-videos-bucketsampleBigBuckBunny.mp4},
+{tSintel,caction,uhttpscommondatastorage.googleapis.comgtv-videos-bucketsampleSintel.mp4},
+{tTears of Steel,csci,uhttpscommondatastorage.googleapis.comgtv-videos-bucketsampleTearsOfSteel.mp4},
+{tElephants Dream,csci,uhttpscommondatastorage.googleapis.comgtv-videos-bucketsampleElephantsDream.mp4},
+{tFor Bigger Blazes,caction,uhttpscommondatastorage.googleapis.comgtv-videos-bucketsampleForBiggerBlazes.mp4},
+{tFor Bigger Escape,caction,uhttpscommondatastorage.googleapis.comgtv-videos-bucketsampleForBiggerEscapes.mp4},
+{tFor Bigger Fun,ckids,uhttpscommondatastorage.googleapis.comgtv-videos-bucketsampleForBiggerFun.mp4},
+{tFor Bigger Joyrides,ckids,uhttpscommondatastorage.googleapis.comgtv-videos-bucketsampleForBiggerJoyrides.mp4},
+{tFor Bigger Meltdowns,cdoc,uhttpscommondatastorage.googleapis.comgtv-videos-bucketsampleForBiggerMeltdowns.mp4}
+];
+
+function show(cat){
+const box=document.getElementById(movies);
+box.innerHTML=;
+movies.filter(m=cat===allm.c===cat).forEach(m={
+box.innerHTML+=`div class=movieh3${m.t}h3video controlssource src=${m.u} type=videomp4videodiv`;
+});
+}
+show(all);
+script
+
+body
+html
